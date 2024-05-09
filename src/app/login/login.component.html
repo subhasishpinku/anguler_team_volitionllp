@@ -1,0 +1,28 @@
+<div class="login">
+    <h1>Volition LLP</h1>
+    <form method="post" #userData="ngForm" action="">
+      <div class="form-group">
+        <input type="text" name="n1"
+        #name="ngModel"
+        [(ngModel)]="myForm.email"
+        class="form-control" placeholder="ENTER YOUR Email" required>
+      </div>
+  
+      <div class="form-group">
+        <input [type]="show? 'text':'password' " name="pas1" 
+        [(ngModel)]="myForm.pass1"
+        #pass1="ngModel"
+        class="form-control" placeholder="ENTER YOUR PASSWORD" required>
+        <p class="submit">
+          <button class="btn btn-sm btn-outline-info" (click)="password()">{{show ? 'Hide':'Show'}}</button>
+        </p>
+      </div>
+  
+      <p class="submit">
+          <button type="submit" name="commit" value="Login" [disabled]="userData.invalid"  class="btn btn-sm btn-outline-info" (click)="submit(userData)">SIGN IN</button>
+      </p>
+  
+    </form>
+  </div>
+  
+  
